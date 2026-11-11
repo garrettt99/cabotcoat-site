@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Get a Painting Quote | Cabot Coat Painting</title>
+<meta name="description" content="Request a rental turnover or interior painting quote in Sydney, Cape Breton. Send your location, a few photos and your target date.">
+<link rel="canonical" href="https://cabotcoat.ca/quote.html">
+<meta property="og:title" content="Get a Painting Quote | Cabot Coat Painting">
+<meta property="og:description" content="Request a rental turnover or interior painting quote in Sydney, Cape Breton. Send your location, a few photos and your target date.">
+<meta property="og:image" content="https://cabotcoat.ca/logo.png">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="styles.css">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Cabot Coat Painting, back to top"><img src="logo.png" alt="Cabot Coat Painting" width="800" height="294"></a>
+    <div class="header-right">
+      <a class="btn btn-primary header-cta" href="quote.html">Get a Quote</a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main" hidden>
+        <a class="link" href="rental-turnovers.html">Rental Turnovers</a>
+        <a class="link" href="interior-painting.html">Interior Painting</a>
+        <a class="link" href="service-area.html">Service Area</a>
+        <a class="btn btn-primary" href="quote.html">Get a Quote</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<main id="top">
+<section class="block quote-band" id="quote">
+    <div class="wrap quote-grid">
+      <div class="quote-side">
+        <div class="eyebrow">Get a quote</div>
+        <h1 style="font-size: clamp(2rem, 4.6vw, 3rem)">Tell us what needs painting.</h1>
+        <p class="muted">It takes about two minutes. Photos help us give you an accurate price without a site visit.</p>
+        <p class="muted">Prefer to message? <a href="https://m.me/61596141884232" target="_blank" rel="noopener">Message Cabot Coat Painting on Facebook</a>.</p>
+      </div>
+
+      <form class="quote" id="quote-form" novalidate data-endpoint="">
+        <div class="hp" aria-hidden="true"><label for="q-website">Website</label><input type="text" id="q-website" name="_honey" tabindex="-1" autocomplete="off"></div>
+
+        <div class="field">
+          <label for="q-name">Name</label>
+          <input type="text" id="q-name" name="name" autocomplete="name" required>
+          <p class="err" id="q-name-err"></p>
+        </div>
+        <div class="field">
+          <label for="q-contact">Email or phone</label>
+          <input type="text" id="q-contact" name="contact" autocomplete="on" required>
+          <p class="err" id="q-contact-err"></p>
+        </div>
+        <div class="field full">
+          <label for="q-town">Property town or neighbourhood</label>
+          <input type="text" id="q-town" name="town" placeholder="For example, Whitney Pier or Glace Bay" required>
+          <p class="err" id="q-town-err"></p>
+        </div>
+        <fieldset class="field full" id="q-type-set">
+          <legend>Type of job</legend>
+          <div class="choice-row">
+            <label class="choice"><input type="radio" name="job_type" value="Rental turnover" id="q-type-rental" required><span>Rental turnover</span></label>
+            <label class="choice"><input type="radio" name="job_type" value="Interior painting" id="q-type-interior"><span>Interior painting</span></label>
+          </div>
+          <p class="err" id="q-type-err"></p>
+        </fieldset>
+        <div class="field">
+          <label for="q-size">Unit size or rooms to paint</label>
+          <input type="text" id="q-size" name="size" placeholder="2-bedroom unit, or living room and hallway" required>
+          <p class="err" id="q-size-err"></p>
+        </div>
+        <div class="field">
+          <label for="q-date">Target completion date <span class="opt">(if known)</span></label>
+          <input type="date" id="q-date" name="target_date">
+        </div>
+        <div class="field full">
+          <label for="q-desc">Short description <span class="opt">(optional)</span></label>
+          <textarea id="q-desc" name="description" maxlength="1500" placeholder="Tenant moves out Dec 1. Walls and ceilings, a few holes to patch, same colour as now."></textarea>
+        </div>
+        <div class="field full">
+          <span style="font-weight: 600; font-size: 0.95rem">Photos <span class="opt">(optional, up to 6, 10 MB each)</span></span>
+          <div class="drop" id="drop">
+            <span class="muted" style="font-size: 0.95rem">Add photos of each room and any damage.</span>
+            <label class="btn btn-outline" for="q-photos" style="min-height: 46px">Choose photos</label>
+            <input type="file" id="q-photos" name="photos" accept="image/*" multiple>
+          </div>
+          <ul class="file-list" id="file-list" aria-live="polite"></ul>
+          <p class="err" id="q-photos-err"></p>
+        </div>
+
+        <div class="submit-row">
+          <div class="progress" id="progress" hidden><div id="progress-bar"></div></div>
+          <p class="muted" id="progress-text" hidden style="font-size: 0.92rem"></p>
+          <div class="status" id="status" hidden role="alert"></div>
+          <button class="btn btn-primary" type="submit" id="submit-btn">Send My Quote Request</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 Cabot Coat Painting · Sydney, Nova Scotia</span>
+    <a href="https://www.facebook.com/profile.php?id=61596141884232" target="_blank" rel="noopener">Cabot Coat Painting on Facebook</a>
+  </div>
+</footer>
+<script src="site.js"></script>
+</body>
+</html>
